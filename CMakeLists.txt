@@ -84,7 +84,9 @@ target_link_libraries(${PROJECT_NAME}_filter
 
 # Action Server executable
 add_executable(${PROJECT_NAME}_server src/simple_grasps_server.cpp)
-add_dependencies(${PROJECT_NAME}_server ${catkin_EXPORTED_TARGETS}) # don't build until necessary msgs are finish
+add_dependencies(${PROJECT_NAME}_server
+  ${PROJECT_NAME}_generate_messages_cpp
+  ${catkin_EXPORTED_TARGETS}) # don't build until necessary msgs are finish
 target_link_libraries(${PROJECT_NAME}_server
   ${PROJECT_NAME} ${catkin_LIBRARIES} ${Boost_LIBRARIES}
 )

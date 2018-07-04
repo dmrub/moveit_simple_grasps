@@ -135,7 +135,7 @@ public:
     visual_tools_.reset(new moveit_visual_tools::MoveItVisualTools(grasp_data_.base_link_, "/end_effector_marker", planning_scene_monitor_));
     visual_tools_->setLifetime(40.0);
     visual_tools_->loadEEMarker(ee_jmg);
-    visual_tools_->setFloorToBaseHeight(-0.9);
+    // visual_tools_->setFloorToBaseHeight(-0.9); // DEPRECATED
 
     // Clear out old collision objects just because
     //visual_tools_->removeAllCollisionObjects();

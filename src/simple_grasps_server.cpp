@@ -135,7 +135,8 @@ namespace moveit_simple_grasps
       : nh_("~")
       , as_(nh_, name, boost::bind(&moveit_simple_grasps::GraspGeneratorServer::executeCB, this, _1), false)
       , side_(side)
-      , planning_group_name_(side_+"_arm")
+      , planning_group_name_("arm")
+//      , planning_group_name_(side_+"_arm")
     {
       // ---------------------------------------------------------------------------------------------
       // Load grasp data specific to our robot
@@ -192,7 +193,7 @@ namespace moveit_simple_grasps
 int main(int argc, char *argv[])
 {
   ros::init(argc, argv, "grasp_generator_server");
-  moveit_simple_grasps::GraspGeneratorServer grasp_generator_server("generate", "right");
+  moveit_simple_grasps::GraspGeneratorServer grasp_generator_server("generate", "gripper");
   ros::spin();
   return 0;
 }

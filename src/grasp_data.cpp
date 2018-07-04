@@ -275,7 +275,7 @@ bool GraspData::setRobotState( robot_state::RobotStatePtr &robot_state, const tr
   for (std::size_t i = 0; i < posture.joint_names.size(); ++i)
   {
     // Debug
-    std::cout << "Setting joint " << posture.joint_names[i] << " to value " 
+    std::cout << "Setting joint " << posture.joint_names[i] << " to value "
               << posture.points[i].positions[0] << std::endl;
 
     // Set joint position
